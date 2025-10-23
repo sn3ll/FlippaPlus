@@ -155,12 +155,6 @@ We welcome contributions! Please feel free to:
 3. Test by loading the extension in Chrome Developer Mode
 4. Submit a pull request
 
-## Support
-
-- **GitHub Issues**: [Report bugs or request features](https://github.com/yourusername/flippa-preview-extension/issues)
-- **Email**: support@yourextension.com
-- **Documentation**: [Visit our wiki](https://github.com/yourusername/flippa-preview-extension/wiki)
-
 ## License
 
 MIT License - See [LICENSE](LICENSE) file for details.
