@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Flippa Preview Extension</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        
+        .test-section {
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .test-attachment {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        
+        .attachment-content {
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .attachment-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .attachment-type {
+            background: #3b82f6;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .attachment-name {
+            font-weight: 500;
+            color: #1f2937;
+        }
+        
+        .download-icon {
+            color: #6b7280;
+        }
+        
+        h1 {
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 32px;
+        }
+        
+        .instructions {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .instructions h3 {
+            color: #1e40af;
+            margin-top: 0;
+        }
+        
+        .status {
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        
+        .status-success {
+            background: #dcfce7;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+        }
+        
+        .status-error {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flippa Preview Extension Test Page</h1>
+    <p class="subtitle">Use this page to test the extension functionality before using on Flippa.com</p>
+    
+    <div class="instructions">
+        <h3>Testing Instructions</h3>
+        <ol>
+            <li>Make sure the extension is installed and enabled</li>
+            <li>Check if the attachments below show preview/open buttons</li>
+            <li>Test the preview, open, and download functionality</li>
+            <li>If it works here, it should work on Flippa.com</li>
+        </ol>
+    </div>
+    
+    <div id="status" class="status status-error">
+        Extension not detected. Please install and enable the Flippa Preview Extension.
+    </div>
+    
+    <div class="test-section">
+        <h2>Test Attachments</h2>
+        <p>These simulate Flippa attachment containers:</p>
+        
+        <div class="OnboardingAttachments__attachment__container">
+            <div class="attachment-content">
+                <div class="attachment-info">
+                    <div class="OnboardingAttachments__attachment__tab jpg">JPG</div>
+                    <a target="_blank" class="btn-link-unstyled stretched-link align-self-stretch w-100 d-flex" href="https://via.placeholder.com/800x600.jpg">
+                        <div class="OnboardingAttachments__attachment__title">
+                            <span class="attachment-name">Test Image Screenshot</span>
+                        </div>
+                        <div class="ml-3 float-left align-self-center pr-3 download-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="OnboardingAttachments__attachment__container">
+            <div class="attachment-content">
+                <div class="attachment-info">
+                    <div class="OnboardingAttachments__attachment__tab pdf">PDF</div>
+                    <a target="_self" class="btn-link-unstyled stretched-link align-self-stretch w-100 d-flex" href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf">
+                        <div class="OnboardingAttachments__attachment__title">
+                            <span class="attachment-name">Sample PDF Document</span>
+                        </div>
+                        <div class="ml-3 float-left align-self-center pr-3 download-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="OnboardingAttachments__attachment__container">
+            <div class="attachment-content">
+                <div class="attachment-info">
+                    <div class="OnboardingAttachments__attachment__tab xlsx">XLSX</div>
+                    <a target="_self" class="btn-link-unstyled stretched-link align-self-stretch w-100 d-flex" href="https://file-examples.com/storage/fe86c96865cfcdc2d735f93/2017/10/file_example_XLSX_10.xlsx">
+                        <div class="OnboardingAttachments__attachment__title">
+                            <span class="attachment-name">Test Spreadsheet</span>
+                        </div>
+                        <div class="ml-3 float-left align-self-center pr-3 download-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Expected Behavior</h2>
+        <ul>
+            <li><strong>JPG Image:</strong> Should show Preview, Open, and Download buttons</li>
+            <li><strong>PDF Document:</strong> Should show Preview, Open, and Download buttons</li>
+            <li><strong>XLSX Spreadsheet:</strong> Should show Open and Download buttons (no preview)</li>
+        </ul>
+        
+        <h3>Testing Checklist</h3>
+        <ul>
+            <li>□ Extension buttons appear next to attachments</li>
+            <li>□ Preview button works for images</li>
+            <li>□ Preview button works for PDFs</li>
+            <li>□ Open button opens files in new tabs</li>
+            <li>□ Download button downloads files</li>
+            <li>□ Modal can be closed with X, Escape, or clicking outside</li>
+            <li>□ Extension popup shows correct status</li>
+        </ul>
+    </div>
+
+    <script>
+        // Simple detection script
+        setTimeout(() => {
+            const enhanced = document.querySelector('.flippa-preview-enhanced');
+            const status = document.getElementById('status');
+            
+            if (enhanced) {
+                status.className = 'status status-success';
+                status.textContent = 'Extension detected and working! Attachments have been enhanced.';
+            } else {
+                // Try again after a bit more time
+                setTimeout(() => {
+                    const enhanced = document.querySelector('.flippa-preview-enhanced');
+                    if (enhanced) {
+                        status.className = 'status status-success';
+                        status.textContent = 'Extension detected and working! Attachments have been enhanced.';
+                    }
+                }, 2000);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

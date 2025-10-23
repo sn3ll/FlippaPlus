@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Flippa File Preview",
+  "version": "1.0",
+  "description": "Preview and open Flippa attachments in new tabs without downloading",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://flippa.com/*",
+    "*://*.flippa.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://flippa.com/*", "*://*.flippa.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Flippa File Preview",
+    "default_icon": {
+      "16": "icons/icon16.svg",
+      "32": "icons/icon32.svg",
+      "48": "icons/icon48.svg",
+      "128": "icons/icon128.svg"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.svg",
+    "32": "icons/icon32.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["preview.html"],
+      "matches": ["*://flippa.com/*", "*://*.flippa.com/*"]
+    }
+  ]
+}

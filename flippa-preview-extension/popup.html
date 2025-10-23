@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flippa Preview Extension</title>
+    <style>
+        body {
+            width: 320px;
+            padding: 20px;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f9fafb;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border-radius: 12px;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        h1 {
+            margin: 0 0 8px;
+            font-size: 18px;
+            color: #1f2937;
+        }
+        
+        .subtitle {
+            color: #6b7280;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        .features {
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        
+        .feature:last-child {
+            margin-bottom: 0;
+        }
+        
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            background: #3b82f6;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        
+        .status {
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        .status-active {
+            background-color: #10b981;
+        }
+        
+        .status-inactive {
+            background-color: #ef4444;
+        }
+        
+        .toggle-container {
+            margin-top: 12px;
+        }
+        
+        .toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+        }
+        
+        .toggle input[type="checkbox"] {
+            margin: 0;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .links {
+            margin-top: 16px;
+            text-align: center;
+        }
+        
+        .links a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 12px;
+            margin: 0 8px;
+        }
+        
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">F+</div>
+        <h1>Flippa Preview Extension</h1>
+        <p class="subtitle">Enhanced attachment handling for Flippa.com</p>
+    </div>
+    
+    <div class="features">
+        <div class="feature">
+            <div class="feature-icon">👁</div>
+            <span>Preview images and PDFs without downloading</span>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🔗</div>
+            <span>Open files in new tabs instead of downloading</span>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">⬇</div>
+            <span>Download files when you need them</span>
+        </div>
+    </div>
+    
+    <div class="status">
+        <div id="status-text">
+            <span class="status-indicator status-inactive"></span>
+            Checking page compatibility...
+        </div>
+        
+        <div class="toggle-container">
+            <div class="toggle">
+                <label for="enableExtension">Enable Extension</label>
+                <input type="checkbox" id="enableExtension" checked>
+            </div>
+        </div>
+    </div>
+    
+    <div class="links">
+        <a href="#" id="reportIssue">Report Issue</a>
+        <a href="#" id="viewSource">View Source</a>
+        <a href="#" id="donate">Support</a>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

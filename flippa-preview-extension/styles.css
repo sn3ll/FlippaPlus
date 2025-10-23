@@ -1,0 +1,425 @@
+/* Flippa Preview Extension Styles */
+
+/* Button container styles */
+.flippa-preview-buttons {
+    display: flex;
+    gap: 6px;
+    margin: 8px 0 6px 0;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Button styles */
+.flippa-preview-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 8px;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    color: #374151;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.flippa-preview-btn:hover {
+    background-color: #f9fafb;
+    border-color: #9ca3af;
+    color: #1f2937;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flippa-preview-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific button variants */
+.flippa-preview-btn-preview {
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.flippa-preview-btn-preview:hover {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.flippa-preview-btn-newtab {
+    border-color: #10b981;
+    color: #10b981;
+}
+
+.flippa-preview-btn-newtab:hover {
+    background-color: #10b981;
+    color: white;
+}
+
+.flippa-preview-btn-download {
+    border-color: #6b7280;
+    color: #6b7280;
+}
+
+.flippa-preview-btn-download:hover {
+    background-color: #6b7280;
+    color: white;
+}
+
+/* Modal styles */
+.flippa-preview-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.flippa-preview-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.flippa-preview-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+}
+
+.flippa-preview-modal-content {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    max-width: 95vw;
+    max-height: 95vh;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.flippa-preview-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px 16px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+    flex-shrink: 0;
+}
+
+.flippa-preview-modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    flex: 1;
+    padding-right: 16px;
+}
+
+.flippa-preview-modal-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.flippa-preview-modal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    color: #374151;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.flippa-preview-modal-btn:hover {
+    background-color: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.flippa-preview-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 4px;
+    color: #6b7280;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+}
+
+.flippa-preview-modal-close:hover {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.flippa-preview-modal-body {
+    padding: 24px;
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    max-height: calc(95vh - 120px);
+}
+
+.flippa-preview-loading {
+    font-size: 16px;
+    color: #6b7280;
+    text-align: center;
+}
+
+.flippa-preview-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flippa-preview-content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    cursor: zoom-in;
+}
+
+.flippa-preview-content iframe {
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+}
+
+/* Enhanced attachment container */
+.flippa-preview-enhanced .OnboardingAttachments__attachment__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make the title area clickable */
+.flippa-preview-enhanced .OnboardingAttachments__attachment__title {
+    transition: background-color 0.2s ease;
+    border-radius: 4px;
+    padding: 2px 4px;
+    margin: -2px -4px;
+}
+
+.flippa-preview-enhanced .OnboardingAttachments__attachment__title:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Remove stretched-link behavior since we replaced the anchor */
+.flippa-preview-enhanced .btn-link-unstyled {
+    position: static !important;
+}
+
+.flippa-preview-enhanced .btn-link-unstyled::after {
+    display: none !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .flippa-preview-modal-content {
+        width: 95vw;
+        max-height: 95vh;
+        margin: 10px;
+    }
+    
+    .flippa-preview-modal-header {
+        padding: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .flippa-preview-modal-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .flippa-preview-modal-body {
+        padding: 16px;
+    }
+    
+    .flippa-preview-buttons {
+        gap: 4px;
+        padding: 0 12px;
+        margin: 6px 0;
+    }
+    
+    .flippa-preview-btn {
+        flex: 1;
+        min-width: 0;
+        justify-content: center;
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+}
+
+/* Toast notification styles */
+.flippa-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+    max-width: 400px;
+    min-width: 300px;
+}
+
+.flippa-toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.flippa-toast.loading {
+    border-left: 4px solid #3b82f6;
+}
+
+.flippa-toast.error {
+    border-left: 4px solid #ef4444;
+}
+
+.flippa-toast.success {
+    border-left: 4px solid #10b981;
+}
+
+.flippa-toast.info {
+    border-left: 4px solid #6b7280;
+}
+
+.flippa-toast-content {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    gap: 12px;
+}
+
+.flippa-toast-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.flippa-toast-message {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.4;
+}
+
+/* Loading animation for toast */
+.flippa-toast.loading .flippa-toast-icon {
+    animation: flippa-toast-pulse 2s ease-in-out infinite;
+}
+
+@keyframes flippa-toast-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Responsive toast */
+@media (max-width: 768px) {
+    .flippa-toast {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+        min-width: auto;
+    }
+    
+    .flippa-toast-content {
+        padding: 12px 16px;
+    }
+    
+    .flippa-toast-message {
+        font-size: 13px;
+    }
+}
+
+/* Animation for buttons */
+@keyframes flippa-preview-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.flippa-preview-buttons {
+    animation: flippa-preview-fade-in 0.3s ease-out;
+}
+
+/* Focus states for accessibility */
+.flippa-preview-btn:focus,
+.flippa-preview-modal-btn:focus,
+.flippa-preview-modal-close:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Loading state */
+.flippa-preview-loading {
+    position: relative;
+}
+
+.flippa-preview-loading::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 50%;
+    border-top-color: #3b82f6;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
