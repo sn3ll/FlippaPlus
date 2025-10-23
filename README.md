@@ -157,7 +157,7 @@ We welcome contributions! Please feel free to:
 
 ## License
 
-MIT License - See [LICENSE](LICENSE) file for details.
+MIT License 
 
 ## Changelog
 
